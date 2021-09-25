@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Interactive Weather Map</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+    
+  </head>
+  <body style="margin: 10px;">
+    <div class="jumbotron">
+      <center>
+        <h3>Interactive Weather Map</h3>
+        <p>Built by Virendra Kabra</p>
+      </center>
+
+    </div>
+    {% block map %}
+    Details:
+    <ul>
+      <li>Clicking on the link below opens up an interactive map</li>
+      <li>You can show or hide geographical coordinates of the point the mouse is hovering over</li>
+      <li>Clicking at any point in the map will update the weather information of that coordinate, that can be seen below the map</li>
+    </ul>
+    <a href="/myApp/map/?lat=22&lng=78&currLat=22&currLng=78&zoom=3.5&show=Hide">Click here to get started!</a>
+    {% endblock %}
+  </body>
+</html>

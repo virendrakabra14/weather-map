@@ -1,0 +1,7 @@
+https://docs.djangoproject.com/en/3.2/intro/
+https://stackoverflow.com/
+https://dev.to/
+https://docs.mapbox.com/
+https://openweathermap.org/api/one-call-api
+https://www.w3schools.com
+https://devcenter.heroku.com/categories/python-support
