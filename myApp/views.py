@@ -1,10 +1,11 @@
 from django.shortcuts import render
 import requests
+from django.conf import settings
 
 # Create your views here.
 
 def default_map (request):
-    mapbox_access = 'pk.eyJ1IjoidmlyZW5kcmFrYWJyYSIsImEiOiJja3R5NnI3dzEwbmxtMm5xaGZkOTU5d2ppIn0.JhMUOuV4wjTLTerRlvQQWw'
+    mapbox_access = settings.MAPBOX_KEY
 
     # i = 0
     # for e in latLng:
@@ -26,9 +27,9 @@ def default_map (request):
 
     # print ("--------------------latLng", lat, lng)
 
-    weather_response = requests.get('https://api.openweathermap.org/data/2.5/onecall?lat='+lat+'&lon='+lng+'&exclude=minutely,hourly,daily&units=metric&appid=0a666fe2e0184668f89ab03d05280f71').json()
+    weather_response = requests.get('https://api.openweathermap.org/data/2.5/onecall?lat='+lat+'&lon='+lng+'&exclude=minutely,hourly,daily&units=metric&appid='+settings.WEATHER_KEY).json()
 
-    # print ('https://api.openweathermap.org/data/2.5/onecall?lat='+lat+'&lon='+lng+'&exclude=minutely,hourly,daily&units=metric&appid=0a666fe2e0184668f89ab03d05280f71')
+    # print ('https://api.openweathermap.org/data/2.5/onecall?lat='+lat+'&lon='+lng+'&exclude=minutely,hourly,daily&units=metric&appid='+settings.WEATHER_KEY)
 
     temp = weather_response['current']['temp']                                  # float
     tempFeels = weather_response['current']['feels_like']                       # float
